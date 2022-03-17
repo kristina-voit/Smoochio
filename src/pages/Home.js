@@ -7,15 +7,15 @@ const Home = () => {
   };
 
   return (
-    <>
-      <Nav />
+    <div className="overlay">
+      <Nav minimal={false} authToken={authToken} />
       <div className="home">
         <h1>Swipe right (r)</h1>
         <button className="primary-button" onClick={handleClick}>
           {authToken ? "Sign out" : "Create Account"}
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
