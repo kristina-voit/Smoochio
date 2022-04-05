@@ -4,11 +4,12 @@ import AuthModal from "../components/AuthModal";
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const [isSignedUp, setIsSignedUp] = useState(true);
   const authToken = false;
   const handleClick = () => {
     console.log("clicked!");
     setShowModal(true);
+    setIsSignedUp(true);
   };
 
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         authToken={authToken}
         setShowModal={setShowModal}
         showModal={showModal}
+        setIsSignedUp={setIsSignedUp}
       />
       <div className="home">
         <h1>Swipe right!</h1>
@@ -25,7 +27,13 @@ const Home = () => {
           {authToken ? "Sign out" : "Create Account"}
         </button>
 
-        {showModal && <AuthModal setShowModal={setShowModal} />}
+        {showModal && (
+          <AuthModal
+            setShowModal={setShowModal}
+            setIsSignedUp={setIsSignedUp}
+            isSignedUp={isSignedUp}
+          />
+        )}
       </div>
     </div>
   );

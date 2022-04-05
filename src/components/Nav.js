@@ -1,9 +1,16 @@
 import logo from "../images/logo.svg";
 import logoslogan from "../images/LogoSlogan.png";
 
-const Nav = ({ minimal, authToken, setShowModal, showModal }) => {
+const Nav = ({
+  minimal,
+  authToken,
+  setShowModal,
+  showModal,
+  setisSignedUp,
+}) => {
   const handleClick = () => {
     setShowModal(true);
+    setisSignedUp(false);
   };
   return (
     <nav>

@@ -112,3 +112,15 @@ nav .logo-container .logo {
 .auth-modal .close-icon {
   float: right;
 }
+
+.auth-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-modal input[type="password"],
+.auth-modal input[type="email"] {
+  padding: 8px;
+  margin: 8px;
+  font-size: 17px;
+}
